@@ -15,7 +15,7 @@
 
 terraform {
   backend "gcs" {
-    bucket = "xyz-sur"
+    bucket = "xyz-sur-poc"
     prefix = "env/dev"
   }
 }
