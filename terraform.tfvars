@@ -1,2 +1,5 @@
-project_id  = "bcm-pcidss-devops-jenkins"                   # Put your GCP Project ID.
-bucket_name = "my-bucket-48693"    # Put the desired GCS Bucket name.
+project_id = "bcm-pcidss-devops-jenkins"
+environment = "prod"
+subnet1_region = "us-central1"
+subnet1_zone = "us-central1-a"
+subnet1_cidr = "10.20.0.0/16"
