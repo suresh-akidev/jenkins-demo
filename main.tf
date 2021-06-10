@@ -14,28 +14,19 @@
  * limitations under the License.
  */
 
-terraform {
-  required_providers {
-    google = {
-      source = "hashicorp/google"
-      version = "3.68.0"
-    }
-  }
-}
-
 /*****************************************
   Locals
  *****************************************/
 locals {
-  vpc_network_name = "test-vpc-${var.environment}"
-  vm_name = "example-vm-${var.environment}-test-vm-01"
+  vpc_network_name = "example-vpc-${var.environment}"
+  vm_name = "example-vm-${var.environment}-002"
 }
 
 /*****************************************
   Google Provider Configuration
  *****************************************/
 provider "google" {
-  
+  version = "~> 2.18.0"
 }
 
 /*****************************************
@@ -43,7 +34,7 @@ provider "google" {
  *****************************************/
 module "gcp-network" {
   source       = "terraform-google-modules/network/google"
-  version      = "~> 3.2.2"
+  version      = "~> 1.4.0"
   project_id   = var.project_id
   network_name = local.vpc_network_name
 
@@ -81,5 +72,3 @@ resource "google_compute_instance" "vm_0001" {
     }
   }
 }
-
-
