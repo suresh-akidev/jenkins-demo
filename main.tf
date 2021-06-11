@@ -18,7 +18,7 @@
   Locals
  *****************************************/
 locals {
-  vpc_network_name = "example-vpc-${var.environment}"
+  vpc_network_name = "std-jen-vpc-${var.environment}"
   vm_name = "example-vm-${var.environment}-002"
 }
 
